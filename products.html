@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blush & Britt</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!--this is linking tailwind css-->
+
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .heading{
+            font-family: 'Playfair Display', serif;
+        }
+        .lux-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+      .lux-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 2px;
+        background-color: #C8A27E; 
+        transition: width 0.3s ease-out;
+      }
+      .lux-link:hover::after {
+        width: 100%;
+      }
+
+      /*mobile slide down animation*/
+      @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+      .animate-slideDown {
+        animation: slideDown 0.35s ease-out;
+      }
+    </style>
+</head>
+
+<body class="bg-[#F8F5F1] text-[#4F3E37]">
+
+    <!--navbar-->
+   <header class="w-full bg-gradient-to-b from-white/95 to-white/60 backdrop-blur-lg border-b border-[#E0D6CC] fixed top-0 left-0 z-50 shadow">
+    
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-12 py-5">
+
+    <!--Mobile menu button-->
+    <button id="menu-btn" class="md:hidden text-[#4F3E37] text-3xl absolute">
+      ☰
+    </button>
+
+    <!--Left nav (desktop)-->
+    <div class="hidden md:flex space-x-8 text-lg font-medium text-[#4F3E37]">
+      <a href="index.html" class="lux-link text-[#C89F85] font-semibold">Home</a>
+
+      <a href="products.html" class="lux-link">Products</a>
+    </div>
+
+    <!--Logo Centered-->
+    <a href="index.html" class="flex justify-center">
+      <img src="images/Brittany.png" class="w-28 md:w-40 lg:w-48" alt="logo">
+    </a>
+
+    <!--Right nav(desktop)-->
+    <div class="hidden md:flex space-x-8 text-lg font-medium text-[#4F3E37]">
+      <a href="contact.html" class="lux-link">Contact</a>
+    </div>
+  </nav>
+
+<!--MOBILE DROPDOWN MENU-->
+<div id="mobile-menu"
+    class="hidden bg-white/95 backdrop-blur-lg shadow-lg md:hidden animate-slideDown border-b border-[#E0D6CC]">
+    <div class="flex flex-col space-y-4 py-6 text-center text-[#4F3E37] text-lg font-medium">
+
+    
+    <a href="index.html" class="lux-link">Home</a>
+    <a href="products.html" class="lux-link">Products</a>
+    <a href="contact.html" class="lux-link">Contact</a>
+    </div>
+   </div>
+</header>
+<div class="h-24 md:h-32"></div>
+
+<main class="max-w-7xl mx-auto px-6">
+    <!--filter buttons-->
+        <div class="flex gap-4 mt-24 justify-center">
+        <button class="filter-btn px-4 py-2 bg-[#E8DED6] rounded-lg" data-category="All">All</button>
+        <button class="filter-btn px-4 py-2 bg-[#E8DED6] rounded-lg" data-category="Blush">Blush</button>
+        <button class="filter-btn px-4 py-2 bg-[#E8DED6] rounded-lg" data-category="Lipgloss">Lipgloss</button>
+        <button class="filter-btn px-4 py-2 bg-[#E8DED6] rounded-lg" data-category="Mascara">Mascara</button>
+        <button class="filter-btn px-4 py-2 bg-[#E8DED6] rounded-lg" data-category="Foundation">Foundation</button>
+    </div>
+    <!--products card grid-->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10"></div>
+</main>
+
+    <!--footer-->
+<footer class="bg-white border-t py-8 text-center">
+    <p class="text-[#4F3E37]">© 2025 Blush & Britt</p>
+
+    <div class="mt-4 flex justify-center space-x-6 text-[#4F3E37]">
+        <a href="https://www.instagram.com/" aria-label="Instagram" class="hover:text-[#C8B7A6]">Instagram
+            <img src="images/instagram.svg" class="h-6 w-6" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/login" aria-label="TikTok" class="hover:text-[#C8B7A6]">TikTok
+            <img src="images/tiktok.svg"
+            class="h-6 w-6" alt="TikTok">
+        </a>
+        <a href="accounts.google.com/Login" aria-label="Gmail" class="hover:text-[#C8B7A6]">Gmail
+        <img src="images/gmail.svg"
+        class="h-6 w-6" alt="Gmail">
+        </a>
+    </div>
+</footer>
+    <script src="product.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
